@@ -7,6 +7,11 @@ const styles = StyleSheet.create({
       flex: 1,
       flexDirection: "column",
     },
+    containerSmallMargin: {
+      marginLeft:10,
+      marginRight:10,
+      flexDirection: "column",
+    },
     image: {
       flex: 1,
       resizeMode: "cover",
@@ -121,6 +126,21 @@ const styles = StyleSheet.create({
       color: "#397fb7",
       fontWeight: "bold",
     },
+    orangeButton: {
+      alignItems: "center",
+      backgroundColor: "#ff2a00",
+      borderRadius: 30,
+      width: windowWidth / 2,
+      height: windowHeight / 12,
+      justifyContent: "center",
+      marginTop: 10,
+      marginBottom: 20,
+    },
+    orangeButtonFont: {
+      fontSize: 18,
+      color: "#ffffff",
+      fontWeight: "bold",
+    },
     socialIcons: {
       flex: 1,
       flexDirection: "row",
@@ -139,6 +159,15 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       marginHorizontal: 8,
       backgroundColor: "#fff",
+    },
+    input: {
+      height: 50,
+      borderWidth: 1,
+      borderRadius:5,
+      backgroundColor:'#fff',
+      padding:10,
+      marginTop:10,
+      marginBottom:10
     },
   });
 

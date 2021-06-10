@@ -15,7 +15,7 @@ import carouselData from "../../Data/CarouselData";
 import { getTeamMembers } from "../../API/API";
 import styles from "../../Constants/Styles";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({navigation}) => {
     //Variables de estado
   const [activeIndex, setActiveIndex] = useState(0);
   const [carruselItems, setCarruselItems] = useState(carouselData);
@@ -150,7 +150,7 @@ const WelcomeScreen = () => {
                 style={styles.imageLarge}
                 resizeMode="contain"
               ></Image>
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('RegisterStepOne')}>
                 <Text style={styles.buttonFont}>¡Quiero ser parte!</Text>
               </TouchableOpacity>
             </View>
@@ -240,7 +240,7 @@ const WelcomeScreen = () => {
                     </Text>
                   </View>
                 </View>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate('RegisterStepOne')}>
                   <Text style={styles.buttonFont}>¡Quiero ser parte!</Text>
                 </TouchableOpacity>
                 <View
