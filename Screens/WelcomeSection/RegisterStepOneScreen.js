@@ -85,7 +85,7 @@ const RegisterStepOneScreen  = ({navigation}) => {
           value={apellidos}
         />
         <View style={{ alignItems: "center" }}>
-          <TouchableOpacity style={styles.orangeButton} onPress={()=>navigation.navigate("RegisterStepTwo")}>
+          <TouchableOpacity style={styles.orangeButton} onPress={()=>navigation.navigate("RegisterStepTwo",)}>
             <Text style={styles.orangeButtonFont}>Enviar</Text>
           </TouchableOpacity>
         </View>
