@@ -11,38 +11,40 @@ import {
 } from "react-native";
 import { Dimensions } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
-const background = require("../../assets/AtomicLabsAssets/MaskGroup1.png");
-const arrowButton = require("../../assets/AtomicLabsAssets/Group4013.png");
-const astronaut = require("../../assets/AtomicLabsAssets/Group4032.png");
-const people = require("../../assets/AtomicLabsAssets/Group4040.png");
-const logo = require("../../assets/AtomicLabsAssets/logo.png");
-const twitter = require("../../assets/AtomicLabsAssets/twitter.png");
-const linkedin = require("../../assets/AtomicLabsAssets/linkedin.png");
 import carouselData from "../../Data/CarouselData";
 import { getTeamMembers } from "../../API/API";
-
-const windowWidth = Dimensions.get("window").width;
-const windowHeight = Dimensions.get("window").height;
+import styles from "../../Constants/Styles";
 
 const WelcomeScreen = () => {
+    //Variables de estado
   const [activeIndex, setActiveIndex] = useState(0);
   const [carruselItems, setCarruselItems] = useState(carouselData);
   const [teamMembers, setTeamMembers] = useState([]);
+  //Constantes de Dimensiones
+  const windowWidth = Dimensions.get("window").width;
+  const windowHeight = Dimensions.get("window").height;
+  //Assets
+  const background = require("../../assets/AtomicLabsAssets/MaskGroup1.png");
+  const arrowButton = require("../../assets/AtomicLabsAssets/Group4013.png");
+  const astronaut = require("../../assets/AtomicLabsAssets/Group4032.png");
+  const people = require("../../assets/AtomicLabsAssets/Group4040.png");
+  const logo = require("../../assets/AtomicLabsAssets/logo.png");
+  const twitter = require("../../assets/AtomicLabsAssets/twitter.png");
+  const linkedin = require("../../assets/AtomicLabsAssets/linkedin.png");
   const ref = useRef(null);
 
+  //Efecto para obtener los datos del Endpoint
   useEffect(() => {
     getData();
-    return () => {
-      //
-    };
   }, []);
 
+  //Funcion para obtener los datos del Endpoint y asignarlos a la variable de estado correspondiente
   const getData = async () => {
     let data = await getTeamMembers();
-    console.log(data);
     setTeamMembers(data);
   };
 
+  //Función para mostrar los miembros del equipo
   const RenderTeamMembers = () => {
     return teamMembers.map((member) => (
       <View>
@@ -63,6 +65,7 @@ const WelcomeScreen = () => {
     ));
   };
 
+  //Función para mostrar el Footer
   const RenderFooter = () => {
     return (
       <View style={styles.footerStyle}>
@@ -97,7 +100,8 @@ const WelcomeScreen = () => {
     );
   };
 
-  const renderItem = useCallback(
+  //Función para crear el los elementos del carrusel
+  const renderCarouselItem = useCallback(
     ({ item, index }) => (
       <View style={styles.carouselItems}>
         <Image source={item.image} style={styles.imageMedium}></Image>
@@ -147,9 +151,7 @@ const WelcomeScreen = () => {
                 resizeMode="contain"
               ></Image>
               <TouchableOpacity style={styles.button}>
-                <Text style={{ color: "#397fb7", fontWeight: "bold" }}>
-                  ¡Quiero ser parte!
-                </Text>
+                <Text style={styles.buttonFont}>¡Quiero ser parte!</Text>
               </TouchableOpacity>
             </View>
             <View style={{ alignItems: "center" }}>
@@ -165,7 +167,7 @@ const WelcomeScreen = () => {
                 data={carruselItems}
                 sliderWidth={windowWidth - 20}
                 itemWidth={windowWidth - 20}
-                renderItem={renderItem}
+                renderItem={renderCarouselItem}
                 onSnapToItem={(index) => setActiveIndex(index)}
               />
               <Pagination
@@ -177,7 +179,7 @@ const WelcomeScreen = () => {
                 inactiveDotOpacity={0.4}
                 inactiveDotScale={0.6}
               />
-              <View style={{ alignItems: "center" }}>
+              <View style={{ alignItems: "center", marginTop: 30 }}>
                 <Text style={{ textAlign: "center" }}>
                   <Text style={styles.text}>¡TE ENCANTARÁ </Text>
                   <Text style={styles.orangeText}>TRABAJAR CON NOSOTROS!</Text>
@@ -187,7 +189,7 @@ const WelcomeScreen = () => {
                   style={styles.imageBanner}
                   resizeMode="contain"
                 />
-                <View style={{ flexDirection: "row" }}>
+                <View style={{ flexDirection: "row", marginBottom: 30 }}>
                   <View
                     style={{
                       flex: 1,
@@ -239,11 +241,15 @@ const WelcomeScreen = () => {
                   </View>
                 </View>
                 <TouchableOpacity style={styles.button}>
-                  <Text style={{ color: "#397fb7", fontWeight: "bold" }}>
-                    ¡Quiero ser parte!
-                  </Text>
+                  <Text style={styles.buttonFont}>¡Quiero ser parte!</Text>
                 </TouchableOpacity>
-                <View style={{ alignItems: "center" }}>
+                <View
+                  style={{
+                    alignItems: "center",
+                    marginTop: 30,
+                    marginBottom: 30,
+                  }}
+                >
                   <Text style={{ textAlign: "center" }}>
                     <Text style={styles.text}>NUESTRO </Text>
                     <Text style={styles.orangeText}>EQUIPO</Text>
@@ -261,135 +267,5 @@ const WelcomeScreen = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-  },
-  image: {
-    flex: 1,
-    resizeMode: "cover",
-    justifyContent: "center",
-  },
-  text: {
-    color: "white",
-    fontSize: 42,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  orangeText: {
-    color: "#ff2a00",
-    fontSize: 42,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  orangeTextSmall: {
-    color: "#ff2a00",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  row: {
-    flexDirection: "row",
-    alignContent: "space-between",
-  },
-  rowCentered: {
-    flexDirection: "row",
-    alignContent: "center",
-    justifyContent: "center",
-  },
-  rowItem: {
-    flex: 1,
-  },
-  tinyXSButton: {
-    width: 30,
-    height: 30,
-  },
-  tinyImgButton: {
-    width: 50,
-    height: 50,
-  },
-  tinyImgLogo: {
-    width: 100,
-    height: 50,
-  },
-  imageLarge: {
-    width: windowWidth - 30,
-    height: windowWidth - 30,
-  },
-  imageBanner: {
-    width: windowWidth - 30,
-  },
-  imageMedium: {
-    width: windowWidth / 2,
-    height: windowWidth / 2,
-  },
-  imageAvatar: {
-    width: windowWidth / 2.5,
-    height: windowWidth / 2.5,
-    marginBottom: 25,
-  },
-  textColor: {
-    color: "#fff",
-  },
-  textList: {
-    color: "#fff",
-    fontWeight: "normal",
-    textAlign: "left",
-    fontSize: 18,
-  },
-  teamMemberCards: {
-    backgroundColor: "#0e509e",
-    borderRadius: 5,
-    padding: 25,
-    alignItems: "center",
-    width: windowWidth - 30,
-    marginTop: 20,
-  },
-  footerStyle: {
-    backgroundColor: "#000000",
-    alignItems: "center",
-    flexDirection: "column",
-    justifyContent: "center",
-    height: windowHeight / 4,
-    padding: 20,
-    marginTop: 70,
-  },
-  carouselItems: {
-    backgroundColor: "#ff2a00",
-    borderRadius: 5,
-    padding: 50,
-    marginLeft: 25,
-    marginRight: 25,
-    alignItems: "center",
-  },
-  button: {
-    alignItems: "center",
-    backgroundColor: "#fff",
-    borderRadius: 15,
-    width: windowWidth / 2,
-    height: 50,
-    justifyContent: "center",
-  },
-  socialIcons: {
-    flex: 1,
-    flexDirection: "row",
-    justifyContent: "flex-end",
-  },
-  activeDotStyles:{
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    marginHorizontal: 8,
-    backgroundColor: "#ff2a00",
-  },
-  inactiveDotStyles:{
-    width: 5,
-    height: 5,
-    borderRadius: 5,
-    marginHorizontal: 8,
-    backgroundColor: "#fff",
-  }
-});
 
 export default WelcomeScreen;
