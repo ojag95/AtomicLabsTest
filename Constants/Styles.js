@@ -23,11 +23,21 @@ const styles = StyleSheet.create({
       fontWeight: "bold",
       textAlign: "center",
     },
+    textM: {
+      color: "white",
+      fontSize: 36,
+      fontWeight: "bold",
+    },
     orangeText: {
       color: "#ff2a00",
       fontSize: 42,
       fontWeight: "bold",
       textAlign: "center",
+    },
+    orangeTextM: {
+      color: "#ff2a00",
+      fontSize: 36,
+      fontWeight: "bold",
     },
     orangeTextSmall: {
       color: "#ff2a00",

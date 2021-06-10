@@ -14,7 +14,7 @@ import { Dimensions } from "react-native";
 import styles from "../../Constants/Styles";
 import Steper from '../../Components/Steper'
 
-const RegisterStepOneScreen  = ({navigation}) => {
+const RegisterStepThreeScreen = ({navigation}) => {
   //Variables de estado
   const [nombre, setNombre] = React.useState("");
   const [apellidos, setApellidos] = React.useState("");
@@ -24,7 +24,7 @@ const RegisterStepOneScreen  = ({navigation}) => {
   //Assets
   const background = require("../../assets/AtomicLabsAssets/MaskGroup1.png");
   const arrowButton = require("../../assets/AtomicLabsAssets/Group4013.png");
-  const astronaut = require("../../assets/AtomicLabsAssets/Group4033.png");
+  const astronaut = require("../../assets/AtomicLabsAssets/Group4039.png");
   const people = require("../../assets/AtomicLabsAssets/Group4040.png");
   const logo = require("../../assets/AtomicLabsAssets/logo.png");
   const twitter = require("../../assets/AtomicLabsAssets/twitter.png");
@@ -69,24 +69,16 @@ const RegisterStepOneScreen  = ({navigation}) => {
   const RenderForm = () => {
     return (
       <View style={{ marginTop: 30, marginBottom: 30 }}>
-        <Text style={[styles.textColor, { fontSize: 16 }]}>Nombre (s)</Text>
+        <Text style={[styles.textColor, { fontSize: 16 }]}>Número de celular</Text>
         <TextInput
           style={styles.input}
-          placeholder="Ingresa tu nombre"
+          placeholder="Número de celular"
           onChangeText={(texto) => setNombre(texto)}
           value={nombre}
         />
-        <Text style={[styles.textColor, { fontSize: 16 }]}>Apellidos</Text>
-
-        <TextInput
-          style={styles.input}
-          placeholder="Ingresa tus apellidos"
-          onChangeText={(texto) => setApellidos(texto)}
-          value={apellidos}
-        />
         <View style={{ alignItems: "center" }}>
-          <TouchableOpacity style={styles.orangeButton} onPress={()=>navigation.navigate("RegisterStepTwo")}>
-            <Text style={styles.orangeButtonFont}>Enviar</Text>
+          <TouchableOpacity style={styles.orangeButton}>
+            <Text style={styles.orangeButtonFont}>Continuar</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -106,39 +98,23 @@ const RegisterStepOneScreen  = ({navigation}) => {
             <View style={styles.rowCentered}>
               <Image source={logo} style={styles.tinyImgLogo}></Image>
             </View>
-            <Steper activeItem={1} progress={30}/>
 
             <View style={styles.rowCentered}>
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <View
-                  style={{
-                    backgroundColor: "#ff2a00",
-                    borderRadius: 60,
-                    width: windowHeight / 12,
-                    height: windowHeight / 12,
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Text style={styles.textColor}>1</Text>
-                </View>
+
+              <View style={{ marginTop:30,marginBottom:30 }}>
+                <Text style={{textAlign:'center'}}>
+                <Text style={styles.textM}>TUS DATOS HAN SIDO</Text>
+                <Text style={styles.orangeTextM}> ENVIADOS CON ÉXITO</Text>
+                </Text>
               </View>
-              <View style={{ flex: 3,marginBottom:30 }}>
-                <Text style={styles.textM}>TE QUEREMOS</Text>
-                <Text style={styles.orangeTextM}>CONOCER</Text>
-              </View>
+              
             </View>
             <Text style={[styles.textColor, { fontSize: 16 }]}>
-              Queremos saber que eres tú, por favor ingresa los siguientes
-              datos:
+              En breve recibirás un correo de confirmación por parte del equipo de AtomicLabs.
             </Text>
-            <RenderForm />
+            <Text style={[styles.textColor, { fontSize: 16 }]}>
+              Recuerda revisar tu bandeja de SPAM ¡Esperamos verte pronto!
+            </Text>
 
             <View style={{ alignItems: "center" }}>
               <Image
@@ -155,4 +131,4 @@ const RegisterStepOneScreen  = ({navigation}) => {
   );
 };
 
-export default RegisterStepOneScreen ;
+export default RegisterStepThreeScreen;
