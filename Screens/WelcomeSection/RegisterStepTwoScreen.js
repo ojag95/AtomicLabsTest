@@ -27,7 +27,7 @@ const RegisterStepTwoScreen = ({ route, navigation }) => {
   const windowWidth = Dimensions.get("window").width;
   const windowHeight = Dimensions.get("window").height;
   //Assets
-  const background = require("../../assets/AtomicLabsAssets/MaskGroup1.png");
+  const background = require("../../assets/AtomicLabsAssets/MaskGroup1.jpg");
   const astronaut = require("../../assets/AtomicLabsAssets/Group4034.png");
   const logo = require("../../assets/AtomicLabsAssets/logo.png");
   //Constantes

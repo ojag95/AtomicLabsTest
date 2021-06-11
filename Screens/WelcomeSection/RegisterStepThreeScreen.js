@@ -12,7 +12,7 @@ import Footer from "../../Components/Footer";
 
 const RegisterStepThreeScreen = ({ navigation }) => {
   //Assets
-  const background = require("../../assets/AtomicLabsAssets/MaskGroup1.png");
+  const background = require("../../assets/AtomicLabsAssets/MaskGroup1.jpg");
   const astronaut = require("../../assets/AtomicLabsAssets/Group4039.png");
   const logo = require("../../assets/AtomicLabsAssets/logo.png");
 

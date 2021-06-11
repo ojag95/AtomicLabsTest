@@ -24,7 +24,7 @@ const WelcomeScreen = ({navigation}) => {
   const windowWidth = Dimensions.get("window").width;
   const windowHeight = Dimensions.get("window").height;
   //Assets
-  const background = require("../../assets/AtomicLabsAssets/MaskGroup1.png");
+  const background = require("../../assets/AtomicLabsAssets/MaskGroup1.jpg");
   const arrowButton = require("../../assets/AtomicLabsAssets/Group4013.png");
   const astronaut = require("../../assets/AtomicLabsAssets/Group4032.png");
   const people = require("../../assets/AtomicLabsAssets/Group4040.png");
