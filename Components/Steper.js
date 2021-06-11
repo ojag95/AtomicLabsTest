@@ -16,7 +16,7 @@ const Steper = (props) => {
     },
     separator: {
       height: 10,
-      backgroundColor: "#ff2a00",
+      backgroundColor: "#ff2500",
       borderRadius: 10,
       width: ((windowWidth - 20) / 100) * progress,
       marginTop: -10,
@@ -28,7 +28,7 @@ const Steper = (props) => {
       width: windowWidth - 20,
     },
     activeOption: {
-      backgroundColor: "#ff2a00",
+      backgroundColor: "#ff2500",
       borderRadius: 60,
       width: windowHeight / 16,
       height: windowHeight / 16,

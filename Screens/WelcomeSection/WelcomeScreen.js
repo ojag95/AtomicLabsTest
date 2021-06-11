@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   View,
   Text,
-  StyleSheet,
   ImageBackground,
   Image,
   TouchableOpacity,
@@ -14,6 +13,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import carouselData from "../../Data/CarouselData";
 import { getTeamMembers } from "../../API/API";
 import styles from "../../Constants/Styles";
+import Footer from '../../Components/Footer'
 
 const WelcomeScreen = ({navigation}) => {
     //Variables de estado
@@ -29,8 +29,7 @@ const WelcomeScreen = ({navigation}) => {
   const astronaut = require("../../assets/AtomicLabsAssets/Group4032.png");
   const people = require("../../assets/AtomicLabsAssets/Group4040.png");
   const logo = require("../../assets/AtomicLabsAssets/logo.png");
-  const twitter = require("../../assets/AtomicLabsAssets/twitter.png");
-  const linkedin = require("../../assets/AtomicLabsAssets/linkedin.png");
+  //refs
   const ref = useRef(null);
 
   //Efecto para obtener los datos del Endpoint
@@ -63,41 +62,6 @@ const WelcomeScreen = ({navigation}) => {
         </View>
       </View>
     ));
-  };
-
-  //Función para mostrar el Footer
-  const RenderFooter = () => {
-    return (
-      <View style={styles.footerStyle}>
-        <View style={{ flex: 1 }}>
-          <Text style={styles.textColor}>
-            © 2020 AtomicLabs. Todos los derechos reservados
-          </Text>
-        </View>
-        <View style={{ flex: 1 }}>
-          <Text style={[styles.textColor, { textDecorationLine: "underline" }]}>
-            Aviso de Privacidad
-          </Text>
-        </View>
-        <View
-          style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}
-        >
-          <TouchableOpacity style={[styles.socialIcons, { marginRight: 15 }]}>
-            <Image source={linkedin} style={styles.tinyXSButton}></Image>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              flex: 1,
-              flexDirection: "row",
-              justifyContent: "flex-start",
-              marginleft: 15,
-            }}
-          >
-            <Image source={twitter} style={styles.tinyXSButton}></Image>
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
   };
 
   //Función para crear el los elementos del carrusel
@@ -261,7 +225,7 @@ const WelcomeScreen = ({navigation}) => {
               </View>
             </View>
           </View>
-          <RenderFooter />
+          <Footer/>
         </ScrollView>
       </ImageBackground>
     </View>

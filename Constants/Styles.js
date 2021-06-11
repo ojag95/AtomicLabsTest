@@ -29,18 +29,18 @@ const styles = StyleSheet.create({
       fontWeight: "bold",
     },
     orangeText: {
-      color: "#ff2a00",
+      color: "#ff2500",
       fontSize: 42,
       fontWeight: "bold",
       textAlign: "center",
     },
     orangeTextM: {
-      color: "#ff2a00",
+      color: "#ff2500",
       fontSize: 36,
       fontWeight: "bold",
     },
     orangeTextSmall: {
-      color: "#ff2a00",
+      color: "#ff2500",
       fontWeight: "bold",
       textAlign: "center",
     },
@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
     textColor: {
       color: "#fff",
     },
+    errorTextColor: {
+      color: "#ff2500",
+    },
     textList: {
       color: "#fff",
       fontWeight: "normal",
@@ -114,7 +117,7 @@ const styles = StyleSheet.create({
       marginTop: 70,
     },
     carouselItems: {
-      backgroundColor: "#ff2a00",
+      backgroundColor: "#ff2500",
       borderRadius: 5,
       padding: 50,
       marginLeft: 25,
@@ -138,7 +141,7 @@ const styles = StyleSheet.create({
     },
     orangeButton: {
       alignItems: "center",
-      backgroundColor: "#ff2a00",
+      backgroundColor: "#ff2500",
       borderRadius: 30,
       width: windowWidth / 2,
       height: windowHeight / 12,
@@ -161,7 +164,7 @@ const styles = StyleSheet.create({
       height: 10,
       borderRadius: 5,
       marginHorizontal: 8,
-      backgroundColor: "#ff2a00",
+      backgroundColor: "#ff2500",
     },
     inactiveDotStyles: {
       width: 5,
