@@ -49,20 +49,28 @@ La versión compilada de la aplicación puede ser descargada desde [este](https:
 
 
 # Screenshots
-
+## Pantalla inicial
 ![WelcomeScreen](https://i.imgur.com/U67vIHw.png)
+
 
 ![WelcomeScreen](https://i.imgur.com/MnHoe4t.png)
 
+
 ![WelcomeScreen](https://i.imgur.com/CaNNhvQ.png)
+
 
 ![WelcomeScreen](https://i.imgur.com/iNBD6Wv.png)
 
+
 ![WelcomeScreen](https://i.imgur.com/D4uE9Cz.png)
+
+## Formulario de Registro (Paso 1)
 
 ![Register Step one](https://i.imgur.com/MqYJeGf.png)
 
+## Formulario de Registro (Paso 2, mostrando el error que enviá el endpoint)
 ![Register Step two](https://i.imgur.com/4LCLRoB.png)
 
+## Formulario de Registro (Sección final)
 ![Register Step three](https://i.imgur.com/hN1EWaq.png)
 
